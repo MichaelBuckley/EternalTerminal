@@ -1,5 +1,6 @@
 syntax = "proto2";
 package et;
+option optimize_for = LITE_RUNTIME;
 
 enum PacketType {
   KEEP_ALIVE = 0;
