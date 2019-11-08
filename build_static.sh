@@ -48,6 +48,7 @@ git checkout 1.0.12
 ./configure --prefix="$PWD"/../out --disable-shared --enable-static
 make -j8 install
 cd ../../build || exit
+DISABLE_CRASH_LOG=${DISABLE_CRASH_LOG:-OFF}
 cmake \
     -DGFLAGS_INCLUDE_DIR="$PWD"/../deps/out/include \
     -DGFLAGS_LIBRARY="$PWD"/../deps/out/lib/libgflags.a \
@@ -64,6 +65,7 @@ cmake \
     -Dsodium_LIBRARY_RELEASE="$PWD"/../deps/out/lib/libsodium.a \
     -Dsodium_USE_STATIC_LIBS=ON \
     -DCMAKE_INSTALL_PREFIX="$PWD"/../out \
+    -DDISABLE_CRASH_LOG="$DISABLE_CRASH_LOG"
     ../
 make -j8 install
 cd ../out || exit
