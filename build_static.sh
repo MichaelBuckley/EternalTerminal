@@ -65,7 +65,7 @@ cmake \
     -Dsodium_LIBRARY_RELEASE="$PWD"/../deps/out/lib/libsodium.a \
     -Dsodium_USE_STATIC_LIBS=ON \
     -DCMAKE_INSTALL_PREFIX="$PWD"/../out \
-    -DDISABLE_CRASH_LOG="$DISABLE_CRASH_LOG"
+    -DDISABLE_CRASH_LOG="$DISABLE_CRASH_LOG" \
     ../
 make -j8 install
 cd ../out || exit
